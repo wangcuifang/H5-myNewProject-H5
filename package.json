@@ -1,0 +1,38 @@
+{
+  "name": "mynewproject-h5",
+  "version": "1.0.0",
+  "description": "柳铁H5实训正式项目\r 点点滴滴都是",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev_mac": "WEBPACK_ENV=dev webpack-dev-server --inline --port 8088",
+    "dev": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
+    "dist_mac": "WEBPACK_ENV=online webpack -p",
+    "dist": "set WEBPACK_ENV=online && webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangcuifang/myNewProject-H5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangcuifang/myNewProject-H5/issues"
+  },
+  "homepage": "https://github.com/wangcuifang/myNewProject-H5#readme",
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.1"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "hogan.js": "^3.0.2"
+  }
+}
