@@ -28,7 +28,7 @@ var header = {
 		}
 	},
 	searchSubmit: function(){
-		var keyword = $.trim$(('#search-btn').val());
+		var keyword = $.trim($('#search-input').val());
 		if(keyword){
 //			alert("!!");
 			window.location.href = './list.html?keyword=' + keyword;
