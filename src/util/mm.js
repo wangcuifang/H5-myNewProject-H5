@@ -4,6 +4,7 @@ var Hogan = require('hogan.js');
 var conf = {
 	serverHost : ''
 }
+
 //$ <==> jquery  这里的ajax方法是jquery自带的方法
 var _mm = {
 	// 数据请求的方法
