@@ -20,9 +20,9 @@ label{
 input[type='checkbox']{
 	cursor: pointer;
 }
-.fa-user{
+/* .fa-user{
 	color: red;
-}
+} */
 /*  定宽布局 */
 .w{
 	width: 1080px;
