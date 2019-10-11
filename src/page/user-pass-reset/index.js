@@ -93,7 +93,7 @@ var page = {
 			if(password && password.length >= 6){
 				_user.resetPassword({
 					username: _this.data.username,
-					password: password,
+					passwordNew: password,
 					forgetToken: _this.data.token
 				},function(res){
 					window,location.href = './user-result.html?type=pass-reset';

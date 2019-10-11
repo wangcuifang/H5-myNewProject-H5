@@ -88,6 +88,25 @@ var _user = {
 			success: resolve,
 			error: reject
 		});
+	},
+	// 9，加载用户信息
+	getUserInfo: function (resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('/user/get_information.do'),
+			method: 'POST',
+			success: resolve,
+			error: reject
+		});
+	},
+	// 10，
+	updatePassword: function (userInfo,resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('/user/reset_password.do'),
+			data:userInfo,
+			method: 'POST',
+			success: resolve,
+			error: reject
+		});
 	}
 }
 
