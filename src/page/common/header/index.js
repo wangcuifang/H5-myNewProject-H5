@@ -22,18 +22,20 @@ var header = {
 	},
 	onLoad: function(){
 		//关键字回填效果
-		var keyword = _mm.getUrlParam('keyword');
+		var keyword = decodeURIComponent(_mm.getUrlParam('keyword'))
 		if(keyword){
 			$('.search-input').val(keyword);
 		}
 	},
 	searchSubmit: function(){
-		var keyword = $.trim($('#search-input').val());
+		// var keyword = $.trim($('#search-input').val());
+		var keyword = decodeURIComponent($.trim($('#search-input').val()));
+		alert(keyword)
 		if(keyword){
-//			alert("!!");
+			// alert("!!");
 			window.location.href = './list.html?keyword=' + keyword;
 		}else{
-//			alert("..");
+			// alert("..");
 			_mm.goHome();
 		}
 	}
