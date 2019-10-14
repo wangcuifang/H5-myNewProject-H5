@@ -7,6 +7,7 @@ require('@/common/header/index.js');
 var _mm = require('util/mm.js');
 var templateIndex = require('./index.string');
 var _product = require('service/product-service.js');
+var Pagination = require('util/pagination/index.js');
 
 var page = {
 	data: {
@@ -14,13 +15,14 @@ var page = {
 			keyword: decodeURIComponent(_mm.getUrlParam('keyword')) || '',
 			categoryId: _mm.getUrlParam('categoryId') || '',
 			orderBy: _mm.getUrlParam('orderBy') || 'default',
-			pageNum: _mm.getUrlParam('pageNum') || 1,
-			pageSize: _mm.getUrlParam('pageSize') || 17
+			pageNum: _mm.getUrlParam('pageNum') || 1,//当前在第几页。默认第一页
+			pageSize: _mm.getUrlParam('pageSize') || 5
 		}
 	},
 	init: function(){
 		this.onLoad();
 		this.bindEvent();
+		
 	},
 	// 加载数据
 	onLoad: function(){
@@ -67,7 +69,7 @@ var page = {
 		
 		// 请求接口
 		_product.getProductList(listParam,function(res){
-			// console.log(res);
+			console.log(res);
 			for(var i = 0; i < res.list.length; i++){
 				if(!res.list[i].mainImage){
 					res.list.splice(i,1);
@@ -82,9 +84,34 @@ var page = {
 				list: res.list
 			});
 			$pListCon.html(listhtml);
+			
+			// 加载分页信息
+			_this.loadPagination({
+				hasPreviousPage: res.hasPreviousPage,
+				prePage: res.prePage,
+				hasNextPage: res.hasNextPage,
+				nextPage: res.nextPage,
+				pageNum: res.pageNum,
+				pages: res.pages
+			});
+			
 		},function(errMsg){
 			_mm.errorTips(errMsg);
 		});
+	},
+	// 渲染页面
+	loadPagination: function(pageInfo){
+		var _this = this;
+		this.pagination ? '' : (this.pagination = new Pagination());
+		this.pagination.render($.extend({} ,pageInfo, {
+			container: $('.pagination'),
+			// 监听选择页面
+			onSelectPage: function(pageNum){
+				_this.data.listParam.pageNum = pageNum;
+				// 加载相应页面
+				_this.loadList();
+			}
+		}));
 	}
 }
 
