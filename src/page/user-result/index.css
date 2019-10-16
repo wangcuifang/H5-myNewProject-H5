@@ -8,8 +8,8 @@
 	display: none;
 }
 .result-con .result-title{
-	color: #555;
-	
+	color: red;
+	/* text-align: center; */
 }
 
 .result-con .result-content{

@@ -10,7 +10,28 @@ var product = {
 			success: resolve,
 			error: reject
 		})
-	}
+	},
+	//2.获得商品详情
+	getProductDetail: function(productId,resolve,reject){
+		_mm.request({
+			url: _mm.getServerUrl('/product/detail.do'),
+			data: {
+				productId: productId
+			},
+			method: 'POST',
+			success: resolve,
+			error: reject
+		});
+	},
+	addToCart: function(productId,resolve,reject){
+		_mm.request({
+			url: _mm.getServerUrl('/cart/add.do'),
+			data: productInfo,
+			method: 'POST',
+			success: resolve,
+			error: reject
+		});
+	},
 }
 
 module.exports = product;
