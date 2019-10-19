@@ -22,7 +22,7 @@ var header = {
 	},
 	onLoad: function(){
 		//关键字回填效果
-		var keyword = decodeURIComponent(_mm.getUrlParam('keyword'))
+		var keyword = _mm.getUrlParam('keyword')
 		if(keyword){
 			$('.search-input').val(keyword);
 		}

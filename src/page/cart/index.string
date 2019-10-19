@@ -2,8 +2,8 @@
 			<div class="cart-header">
 				<table class="cart-table">
 					<tr>
-						<th class="cart-cell call-check">
-							<label for="" class="cart-label">
+						<th class="cart-cell cell-check">
+							<label class="cart-label">
 								{{#allChecked}}
 								<input type="checkbox" class="cart-select-all" checked>
 								{{/allChecked}}
@@ -11,7 +11,7 @@
 								<input type="checkbox" class="cart-select-all">
 								{{/allChecked}}
 								<span>全选</span>
-							</lable>
+							</label>
 						</th>
 						<th class="cart-cell cell-info">商品信息</th>
 						<th class="cart-cell cell-price">单价</th>
@@ -27,7 +27,7 @@
 				<table class="cart-table" data-product-id="{{productId}}">
 					<tr>
 						<td class="cart-cell cell-check">
-							<label for="" class="cart-label">
+							<label class="cart-label">
 								{{#productChecked}}
 								<input type="checkbox" class="cart-select" checked>
 								{{/productChecked}}
@@ -42,6 +42,7 @@
 								alt="{{productName}}" class="p-img">
 							</a>
 						</td>
+						
 						<td class="cart-cell cell-info">
 							<a href="./detail.html?productId={{productId}}" class="link">
 								{{productName}}

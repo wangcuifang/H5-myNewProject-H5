@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<%= require('html-loader!./layout/head-common.html')%>
+  	<title><%= htmlWebpackPlugin.options.title %> - TMailStore电商平台</title>
+  </head>
+  <body>
+		
+		<%= require('html-loader!./layout/nav.html')%>
+		<%= require('html-loader!./layout/header.html')%>
+		
+		<!-- div.crumb>div.w>div.crumb-con -->
+		<div class="crumb">
+			<div class="w">
+				<div class="crumb-con">
+					<a href="./index.html" class="link">TMALL > </a>
+					<span></span>
+					<span class="link-text"><%= htmlWebpackPlugin.options.title %></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="page-wrap w">
+			<!-- 下面会动态生成HTML结构 -->
+			<div class="panel">
+				<h1 class="panel-title">收获地址</h1>
+				<div class="panel-body address-con">
+					<!-- 在这里生成动态HTML结构 -->
+					{{#list}}
+					{{#isActive}}
+					<div class="address-item active" data-id="{{id}}">
+					{{/isActive}}	
+					{{^isActive}}
+						<div class="address-item" data-id="{{id}}">
+					{{/isActive}}		
+							<div class="address-title">
+								{{receiverProvince}} {{receiverCity}} {{receiverName}} 收)
+							</div>
+							<div class="address-detail">
+								{{receiverAddress}} {{receiverPhone}}
+							</div>
+							<div class="address-opera">
+								<span class=" link address-update">编辑</span>
+								<span class=" link address-delete">删除</span>
+							</div>
+						</div>
+						{{/list}}
+						<div class="address-add">
+							<div class="address-new">
+								<i class="fa fa-plus"></i>
+								<div class="text">使用新地址</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="panel">
+				<h1 class="panel-title">商品清单</h1>
+				<div class="panel-body product-con">
+					<!-- 在这里生成动态HTML结构 -->
+						<table class="product-table">
+						<tr>
+							<th class="cell-img">&nbsp;</th>
+							<th class="cell-info">商品描述</th>
+							<th class="cell-price">价格</th>
+							<th class="cell-count">数量</th>
+							<th class="cell-total">小计</th>
+						</tr>
+						{{#orderItemVoList}}
+						<tr>
+							<td class="cell-img">
+								<a href="./detail.html?productId={{productId}}" target="_blank">
+									<img src="{{imageHost}}{{productImage}}" alt="{{productName}}"
+									class="p-img">
+								</a>
+							</td>
+							<td class="cell-info">
+								<a href="./detail.html?productId={{productId}}" target="_blank" class="_blank">
+									{{productName}}
+								</a>
+							</td>
+							<td class="cell-price">￥{{currentUnitPrice}}</td>
+							<td class="cell-count">{{quantity}}</td>
+							<td class="cell-total">￥{{totalPrice}}</td>
+						</tr>
+						{{/orderItemVoList}}
+					</table>
+					<div class="submit-con">
+						<sapn>订单总价：</sapn>
+						<span class="submit-total">￥{{productTotalPrice}}</span>
+						<span class="btn order-submit">提交订单</span>
+					</div>
+
+					
+					
+				</div>
+			</div>
+		</div>
+		<div class="modal-wrap">
+			<!-- 在这里生成动态HTML结构 -->
+		</div>
+		<%= require('html-loader!./layout/footer.html')%>
+	
+  </body>
+</html>
+
+

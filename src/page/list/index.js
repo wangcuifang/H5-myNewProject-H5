@@ -64,20 +64,25 @@ var page = {
 		$pListCon = $('.p-list-con');
 		$pListCon.html('<div class="loading"></div>');
 		
-		listParam.categoryId ? (delete keyword): (delete listParam.categoryId);
+		listParam.categoryId ? (delete listParam.keyword): (delete listParam.categoryId);
 		
 		
 		// 请求接口
 		_product.getProductList(listParam,function(res){
 			console.log(res);
 			for(var i = 0; i < res.list.length; i++){
-				if(!res.list[i].mainImage){
-					res.list.splice(i,1);
-				}
+				
 				if(!(/\.(gif|png|jpg|jpeg).??.*$/.test(res.list[i].mainImage))){
 					res.list.splice(i,1);
 				}
 			}
+			console.log(res.list.length)
+			for (var i = 0;i < res.list.length; i++){
+				var resultArr = res.list[i].mainImage.split('/')
+				if(resultArr.length > 1){
+				res.list[i].mainImage = resultArr[resultArr.length - 1]
+			}
+		}
 			
 			// 渲染页面
 			listhtml = _mm.renderHtml(templateIndex, {

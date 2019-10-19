@@ -32,8 +32,8 @@
 	border: 1px solid #ddd;
 }
 .cart-table .cell-info{
-	width: 35%;
-	text-align: center;
+	/* width: 35%; */
+	text-align: left;
 }
 .cart-table .cell-price{
 	width: 10%;
@@ -106,6 +106,10 @@
 	text-align: center;
 	height: 50px;
 	line-height: 50px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-user-select: none;
 }
 /* 错误信息 */
 .err-tip{
