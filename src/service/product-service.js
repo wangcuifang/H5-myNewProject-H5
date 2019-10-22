@@ -1,7 +1,7 @@
 'use strict'
 var _mm = require('util/mm.js');
 var product = {
-	//
+	//1.商品列表
 	getProductList: function(listParam,resolve,reject){
 		_mm.request({
 			url: _mm.getServerUrl('/product/list.do'),

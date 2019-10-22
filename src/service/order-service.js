@@ -10,9 +10,9 @@ var _order = {
 			method: 'POST',
 			success: resolve,
 			error: reject
-		});
+		})
 	},
-	//提交订单
+	// 2.提交订单
 	createOrder: function(orderInfo,resolve, reject){
 		_mm.request({
 			url: _mm.getServerUrl('/order/create.do'),
@@ -21,7 +21,7 @@ var _order = {
 			success: resolve,
 			error: reject
 		});
-	},
+	}
 }
 module.exports = _order;
 

@@ -41,7 +41,8 @@ var config = {
 		'user-center': './src/page/user-center/index.js',
 		'user-center-update': './src/page/user-center-update/index.js',
 		'user-pass-reset': './src/page/user-pass-reset/index.js',
-		'user-pass-update': './src/page/user-pass-update/index.js'
+		'user-pass-update': './src/page/user-pass-update/index.js',
+		'payment': './src/page/payment/index.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -97,6 +98,7 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('list','商品列表')),
 		new HtmlWebpackPlugin(getHtmlConfig('cart','购物车')),
 		new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
+		new HtmlWebpackPlugin(getHtmlConfig('payment','支付页面')),
 		new HtmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
