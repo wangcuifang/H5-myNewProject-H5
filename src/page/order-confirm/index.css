@@ -121,5 +121,98 @@
 	width: 100px;
 	text-align: center;
 }
+/*================*/
+/*modal部分*/
+.modal{
+	/*实现全屏覆盖*/
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #eee;
+	background: rgba(0,0,0, .4);
+	z-index: 100;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.modal .modal-container{
+	width: 700px;
+	margin: 50px auto;
+	background: #fff;
+	border-radius: 2px;
+}
+.modal .modal-container .modal-header{
+	position: relative;
+	padding: 15px;
+	border-bottom: 1px solid red;
+	background: peachpuff;
+}
+.modal .modal-container .modal-header .modal-title{
+	font-size: 14px;
+	color: blue;
+}
+.modal .modal-container .modal-header .close{
+	position: absolute;
+	padding: 10px;
+	right: 10px;
+	top: 10px;
+	color: red;
+	cursor: pointer;
+}
+.modal .modal-container .modal-body{
+	padding: 15px;
+}
+/*==================*/
+/*form部分*/
+.form .form-line{
+	margin: 5px 0;
+	/*清浮动(设置在父容器中)*/
+	overflow: hidden;
+}
+.form .form-line .label{
+	display: block;
+	float: left;
+	width: 85px;
+	/*text-align: left;*/
+	text-align: right;
+	height: 30px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+/*==============*/
+.form .form-line .label .required{
+	color: red;
+}
+.form .form-line .form-item{
+	padding: 0 5px;
+	height: 30px;
+	line-height: 30px;
+	outline: none;
+	margin-right: 10px;
+}
+.form .form-line .form-item.select-width{
+	width: 150px;
+}
+.form .form-line .form-item.form-width{
+	width: 300px;
+}
+.form .form-line .btn{
+	margin-left: 95px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 

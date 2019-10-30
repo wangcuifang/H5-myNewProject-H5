@@ -42,7 +42,9 @@ var config = {
 		'user-center-update': './src/page/user-center-update/index.js',
 		'user-pass-reset': './src/page/user-pass-reset/index.js',
 		'user-pass-update': './src/page/user-pass-update/index.js',
-		'payment': './src/page/payment/index.js'
+		'payment': './src/page/payment/index.js',
+		'order-list': './src/page/order-list/index.js',
+		'order-detail': './src/page/order-detail/index.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -106,8 +108,9 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('user-pass-update','修改密码')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-result','操作结果')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-center','个人信息')),
-		new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息'))
-		
+		new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-list','订单列表')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-detail','商品详情'))
 	],
 	resolve: {
 		alias: {

@@ -30,7 +30,7 @@ var header = {
 	searchSubmit: function(){
 		// var keyword = $.trim($('#search-input').val());
 		var keyword = decodeURIComponent($.trim($('#search-input').val()));
-		alert(keyword)
+		//alert(keyword)
 		if(keyword){
 			// alert("!!");
 			window.location.href = './list.html?keyword=' + keyword;

@@ -6,10 +6,10 @@
 <div class="address-item active" data-id="{{id}}">
 {{/isActive}}
   <div class="address-title">{{receiverProvince}}
-  {{receiverCity} {{receiverName}} 收)</div>
+  {{receiverCity}} ({{receiverName}} 收)</div>
   <!-- ===== -->
   <div class="address-detail">
-	  {{receiverAddress}} {{receiverPhone}}</div>
+	  {{receiverAddress}} {{receiverPhone}} {{receiverZip}}</div>
   <!-- ===== -->
   <div class="address-opera">
     <span class="link address-update">编辑</span>

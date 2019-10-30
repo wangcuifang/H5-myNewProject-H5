@@ -21,31 +21,12 @@
 		</div>
 		
 		<div class="page-wrap w">
-			<!-- 下面会动态生成HTML结构 -->
-			<div class="panel">
-				<h1 class="panel-title">收获地址</h1>
-				<div class="panel-body address-con">
-					<!-- 在这里生成动态HTML结构 -->
-				
-					
-				</div>
+			<%= require('html-loader!./layout/nav-side.html')%>
+			<div class="content with-nav">
+
 			</div>
-			
-			<div class="panel">
-				<h1 class="panel-title">商品清单</h1>
-				<div class="panel-body product-con">
-					<!-- 在这里生成动态HTML结构 -->
-					
-			</div>
-			
-		</div>
-		<div class="modal-wrap">
-			<!-- 在这里生成动态HTML结构 -->
-			
 		</div>
 		<%= require('html-loader!./layout/footer.html')%>
 	
   </body>
 </html>
-
-
